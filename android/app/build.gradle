@@ -3,6 +3,8 @@ apply plugin: "com.facebook.react"
 
 import com.android.build.OutputFile
 
+
+
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 def expoDebuggableVariants = ['debug']
 // Override `debuggableVariants` for expo-updates debugging
@@ -117,6 +119,7 @@ android {
     defaultConfig {
         applicationId "com.camera"
         minSdkVersion rootProject.ext.minSdkVersion
+        missingDimensionStrategy 'react-native-camera', 'general' // <--- insert this line
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
